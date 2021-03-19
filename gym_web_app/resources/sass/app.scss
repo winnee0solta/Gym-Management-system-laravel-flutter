@@ -1,0 +1,31 @@
+@import "~daemonite-material/css/material.min.css";
+
+
+@import 'login';
+.bg-dark{
+    background: black !important;
+}
+
+
+
+.navbar{
+    background: black !important;
+}
+
+.navdrawer-nav{
+    .nav-item{
+
+
+        color: white;
+        // border-bottom: 1px solid white;
+
+        &:hover{
+            background-color: black;
+        }
+    }
+    .dropdown-divider{
+        margin: 0 auto;
+        width: 85%;
+        background-color:white !important;
+    }
+}
