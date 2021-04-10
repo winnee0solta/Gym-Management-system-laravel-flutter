@@ -31,7 +31,6 @@ class _NotificaitonsScreenState extends State<NotificaitonsScreen> {
   }
 
   Widget _buildItemsForListView(BuildContext context, int index) {
- 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 15.0),
       child: GestureDetector(
@@ -40,23 +39,23 @@ class _NotificaitonsScreenState extends State<NotificaitonsScreen> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
-              title:  Text(
-                  notifications[index]['created_at'],
+              title: Text(
+                notifications[index]['created_at'],
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Color(0xff0a0a0a),
+                ),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: Text(
+                  notifications[index]['notice'],
                   style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 20.0,
                     color: Color(0xff0a0a0a),
                   ),
                 ),
-                subtitle:  Padding(
-                  padding: const EdgeInsets.only(top:10.0),
-                  child: Text(
-                    notifications[index]['notice'],
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Color(0xff0a0a0a),
-                    ),
-                  ),
-                ),
+              ),
             ),
           ),
         ),

@@ -22,7 +22,7 @@ class MemberController extends Controller
 
             $user = User::find($member->user_id);
 
-            //profile data 
+            //profile data
             $bodystatus = array(
                 'weight' => 0,
                 'height' => 0,
@@ -105,7 +105,7 @@ class MemberController extends Controller
         if ($user) {
             $member = Member::where('user_id', $user->id)->first();
 
-            //profile data 
+            //profile data
             $bodystatus = array(
                 'weight' => 0,
                 'height' => 0,
@@ -500,28 +500,30 @@ class MemberController extends Controller
         );
         return response()->json($response);
     }
-}
 
 
-/**
- * MISC FUNCTIONS
- */
 
-function addNewPlan($member_id, $type, $day, $detail)
-{
-    Memberplans::create([
-        'member_id' => $member_id,
-        'type' => $type,
-        'day' => $day,
-        'detail' => $detail,
-    ]);
-}
-function updatePlan($member_id, $type, $day, $detail)
-{
-    $plan = Memberplans::where('member_id', $member_id)->where('type', $type)->where('day', $day)->first();
 
-    if ($plan) {
-        $plan->detail = $detail;
-        $plan->save();
+    /**
+     * MISC FUNCTIONS
+     */
+
+    function addNewPlan($member_id, $type, $day, $detail)
+    {
+        Memberplans::create([
+            'member_id' => $member_id,
+            'type' => $type,
+            'day' => $day,
+            'detail' => $detail,
+        ]);
+    }
+    function updatePlan($member_id, $type, $day, $detail)
+    {
+        $plan = Memberplans::where('member_id', $member_id)->where('type', $type)->where('day', $day)->first();
+
+        if ($plan) {
+            $plan->detail = $detail;
+            $plan->save();
+        }
     }
 }

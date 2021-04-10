@@ -168,7 +168,7 @@ class _MemberRegisterScreenState extends State<MemberRegisterScreen> {
         ),
       ),
     );
-  }
+  } 
 
   // _registerUser
 

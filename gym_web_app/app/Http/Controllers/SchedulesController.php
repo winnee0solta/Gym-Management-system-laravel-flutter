@@ -42,18 +42,12 @@ class SchedulesController extends Controller
 
             foreach ($raw_members as $member) {
 
-
                 //check if member is already assigned to any trainer
                 if (Trainerassignedmembers::where('member_id', $member->id)->count() == 0) {
                     # not assigned to any trainer
                     array_push($members, $member);
                 }
             }
-
-
-
-
-
             //assigned members
             $assigned_members = array();
             foreach (Trainerassignedmembers::where('trainer_id', $trainer->id)->get() as $item) {

@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\DB;
 class TrainersController extends Controller
 {
     public function index()
-    { 
+    {
         $trainers = DB::table('trainers')
-        ->join('users', 'users.id', '=', 'trainers.user_id')
-        ->select('trainers.*', 'users.username')
-        ->paginate(20);
-        return view('trainers.trainers', compact('trainers')); 
+            ->join('users', 'users.id', '=', 'trainers.user_id')
+            ->select('trainers.*', 'users.username')
+            ->paginate(20);
+        return view('trainers.trainers', compact('trainers'));
     }
 
     //adds member detail in db
@@ -86,6 +86,14 @@ class TrainersController extends Controller
 
             //update user db details
             $user->username =  $request->username;
+
+            //update password if exists in request
+            if ($request->has('password') && $request->password != '') {
+                $user->password =  bcrypt($request->password);
+            }
+
+
+
             $user->save();
 
             //update   db data
@@ -111,11 +119,7 @@ class TrainersController extends Controller
 
 
                 return redirect('/trainers/view/' . $trainer->id);
-
-               
             }
-
-         
         } else {
             return  back()->withErrors(['User not found !']);
         }
@@ -139,7 +143,7 @@ class TrainersController extends Controller
 
         return redirect('/trainers');
     }
-    //remove  
+    //remove
     public function remove(Request $request)
     {
         $this->validate($request, [
@@ -147,7 +151,7 @@ class TrainersController extends Controller
         ]);
         $trainer = Trainers::find($request->trainer_id);
         if ($trainer) {
- 
+
             //remove notifications
             Notifications::where('user_id', $trainer->user_id)->delete();
 

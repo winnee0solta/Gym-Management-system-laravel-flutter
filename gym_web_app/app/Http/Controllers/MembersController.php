@@ -39,6 +39,11 @@ class MembersController extends Controller
         if (User::where('username', $request->username)->count() > 0) {
             return  back()->withErrors(['Username Already Exists !']);
         }
+
+
+
+
+
         //create new user
         $user =  User::create([
             'username' => $request->username,
@@ -72,6 +77,26 @@ class MembersController extends Controller
 
         $member->save();
 
+
+        //initialized body status for new member
+        if (Memberbodystatus::where('member_id', $member->id)->count() > 0) {
+            $bodystatus = Memberbodystatus::where('member_id', $member->id)->first();
+        } else {
+            $bodystatus = new Memberbodystatus();
+            $bodystatus->member_id = $member->id;
+        }
+
+
+        $bodystatus->weight = 0;
+        $bodystatus->height = 0;
+        $bodystatus->chest = 0;
+        $bodystatus->stomach = 0;
+        $bodystatus->biceps = 0;
+        $bodystatus->thighs = 0;
+        $bodystatus->save();
+
+
+
         return redirect('/members');
     }
     //updates members detail in db
@@ -93,6 +118,11 @@ class MembersController extends Controller
 
             //update user db details
             $user->username =  $request->username;
+            //update password if exists in request
+            if ($request->has('password') && $request->password != '') {
+                $user->password =  bcrypt($request->password);
+            }
+
             $user->save();
 
             //update members db data
@@ -186,7 +216,7 @@ class MembersController extends Controller
         return redirect('/members');
     }
 
-    //change member verified status 
+    //change member verified status
     public function memberChangeStatus($memebr_id)
     {
         $member = Member::find($memebr_id);

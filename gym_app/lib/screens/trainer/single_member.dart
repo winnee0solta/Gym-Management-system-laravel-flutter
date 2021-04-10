@@ -94,7 +94,9 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
                     memberBodyStatus(),
                     memberNutritionPlan(),
                     memberWorkoutPlan(),
-                    SizedBox(height: 30.0,)
+                    SizedBox(
+                      height: 30.0,
+                    )
                   ],
                 ),
               ),
@@ -391,26 +393,26 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
           height: 30.0,
         ),
         //button
-        // MaterialButton(
-        //   minWidth: 300,
-        //   onPressed: () {
-        //     if (!isloading) _updateBodyStatus();
-        //   },
-        //   color: Theme.of(context).primaryColor,
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(15.0),
-        //     child: Text(
-        //       !isloading ? 'Update Body Status' : 'Please Wait..',
-        //       style: TextStyle(
-        //         color: Colors.white,
-        //         fontSize: 18.0,
-        //       ),
-        //     ),
-        //   ),
-        // ),
-        // SizedBox(
-        //   height: 30.0,
-        // ),
+        MaterialButton(
+          minWidth: 300,
+          onPressed: () {
+            if (!isloading) _updateBodyStatus();
+          },
+          color: Theme.of(context).primaryColor,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text(
+              !isloading ? 'Update Body Status' : 'Please Wait..',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 30.0,
+        ),
       ],
     );
   }
@@ -798,7 +800,7 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
               fontSize: 18.0,
               color: Color(0xff0a0a0a),
             )),
-             SizedBox(
+        SizedBox(
           height: 10.0,
         ),
         Chip(
@@ -926,10 +928,9 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
           wpFSaC.value =
               TextEditingValue(text: data['workout_plans']['saturday']);
 
-          //attendance 
-           
-           attendance = data['attendance'];
+          //attendance
 
+          attendance = data['attendance'];
 
           isloading = false;
         });
@@ -1086,8 +1087,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
       throw Exception('Failed ');
     }
   }
+
   Future<void> _updateAttendance(status) async {
-    
     print(status);
     setState(() {
       isloading = true;
@@ -1095,7 +1096,7 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
 
     var response = await http.post(ApiHelper.memberUpdateAttendance, body: {
       'member_id': widget.memberid.toString(),
-      'status': status.toString(), 
+      'status': status.toString(),
     }, headers: {
       'Accept': 'application/json'
     });

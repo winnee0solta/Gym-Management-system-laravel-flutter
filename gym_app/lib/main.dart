@@ -9,9 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Gym Management System',
-      theme: ThemeData( 
-          primaryColor: Color(0xFFff5959), //#ff5959
+      theme: ThemeData(
+        primaryColor: Color(0xFFff5959), //#ff5959
         accentColor: Color(0xFFfacf5a), //#facf5a
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -19,4 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 

@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | MOBILE APP API Routes
 |--------------------------------------------------------------------------
-| 
+|
 */
+
 Route::post('/login', [AuthController::class, 'loginUser']);
 Route::post('/register', [AuthController::class, 'registerUser']);
 Route::get('/schedule/trainer/{user_id}', [TrainerController::class, 'trainersSchedule']);
@@ -27,11 +28,12 @@ Route::post('/member-data/update-nutrition-plan', [MemberController::class, 'upd
 Route::post('/member-data/update-workout-plan', [MemberController::class, 'updateWorkoutPlans']);
 Route::post('/member-data/update-attendance', [MemberController::class, 'updateAttendance']);
 
-Route::get('/attendance/trainer/{user_id}', [AttendanceController::class, 'trainerAttendance']); 
+Route::get('/attendance/trainer/{user_id}', [AttendanceController::class, 'trainerAttendance']);
 Route::get('/attendance/today/trainer/{user_id}', [AttendanceController::class, 'trainerAttendanceToday']);
 Route::get('/attendance/member/{user_id}', [AttendanceController::class, 'memberAttendance']);
 
 Route::get('/notifications/{user_id}', [NotificationsController::class, 'notificaitons']);
+Route::get('/notifications/{user_id}/count', [NotificationsController::class, 'notificaitonsCount']);
 
 Route::get('/member-data/member/{user_id}', [MemberController::class, 'singleMemberdata']);
 
@@ -42,28 +44,24 @@ Route::get('/payment/member/{user_id}', [PaymentController::class, 'memberPaymen
 |--------------------------------------------------------------------------
 | WEB APP API Routes
 |--------------------------------------------------------------------------
-| 
+|
 */
 //Create new admin account
 Route::get('/register-admin/{username}/{password}', function ($username, $password) {
 
-    if (User::where('username',$username)->count()== 0) {
-       
+    if (User::where('username', $username)->count() == 0) {
+
         $user =  User::create([
             'username' => $username,
-            'password' => bcrypt($password) ,
+            'password' => bcrypt($password),
             'type' => 'admin'
         ]);
         return $user;
-    }else{
+    } else {
         return response('Username already exisits');
     }
-
 });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-
-
-

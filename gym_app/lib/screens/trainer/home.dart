@@ -33,147 +33,149 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
   }
 
   Widget traierProfile() {
-    return user !=null && trainer != null ? Column(children: [
-      //table
-      Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Card(
+    return user != null && trainer != null
+        ? Column(children: [
+            //table
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Card(
                 child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Table(
-              children: [
-                //username
-                TableRow(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Username",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(user['username'].toString(),
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                ]),
-
-                //FUllname
-                TableRow(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Fullname",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(trainer['fullname'].toString(),
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                ]),
-                //phone
-                TableRow(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Phone",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(trainer['phone'].toString(),
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                ]),
-                //address
-                TableRow(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Address",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(trainer['address'].toString(),
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                ]),
-                //shifts
-                TableRow(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Shifts",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xff0a0a0a),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        //morning shift
-                        trainer['shift_m'] == 1
-                            ? Chip(
-                                label: Text(
-                                  'Morning',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Color(0xff0a0a0a),
-                                  ),
-                                ),
-                              )
-                            : SizedBox(),
-                        SizedBox(
-                          width: 5.0,
+                  padding: const EdgeInsets.all(8.0),
+                  child: Table(
+                    children: [
+                      //username
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Username",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
                         ),
-                        //evening shift
-                        trainer['shift_e'] == 1
-                            ? Chip(
-                                label: Text(
-                                  'Evening',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Color(0xff0a0a0a),
-                                  ),
-                                ),
-                              )
-                            : SizedBox(),
-                      ],
-                    ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(user['username'].toString(),
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                      ]),
+
+                      //FUllname
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Fullname",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(trainer['fullname'].toString(),
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                      ]),
+                      //phone
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Phone",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(trainer['phone'].toString(),
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                      ]),
+                      //address
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Address",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(trainer['address'].toString(),
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                      ]),
+                      //shifts
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Shifts",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xff0a0a0a),
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              //morning shift
+                              trainer['shift_m'] == 1
+                                  ? Chip(
+                                      label: Text(
+                                        'Morning',
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                          color: Color(0xff0a0a0a),
+                                        ),
+                                      ),
+                                    )
+                                  : SizedBox(),
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              //evening shift
+                              trainer['shift_e'] == 1
+                                  ? Chip(
+                                      label: Text(
+                                        'Evening',
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                          color: Color(0xff0a0a0a),
+                                        ),
+                                      ),
+                                    )
+                                  : SizedBox(),
+                            ],
+                          ),
+                        ),
+                      ]),
+                    ],
                   ),
-                ]),
-              ],
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
-    ]): SizedBox();
+          ])
+        : SizedBox();
   }
 
   Widget attendanceStatus() {
-    if(attendance == null){
+    if (attendance == null) {
       return SizedBox();
     }
 
@@ -231,7 +233,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
         setState(() {
           // assignedmembers.clear();
           trainer = data['trainer'];
-          user = data['user']; 
+          user = data['user'];
           isloading = false;
         });
       } else {

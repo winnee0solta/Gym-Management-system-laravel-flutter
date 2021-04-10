@@ -42,10 +42,15 @@ class _MemberHomeState extends State<MemberHome> {
             children: [
               //image
               member['image'] != 'no'
-                  ? Image.network(ApiHelper.domain+"/images/pics/"+member['image'],height: 150.0,)
+                  ? Image.network(
+                      ApiHelper.domain + "/images/pics/" + member['image'],
+                      height: 150.0,
+                    )
                   : SizedBox(),
 
-                  SizedBox(height: 15.0,),
+              SizedBox(
+                height: 15.0,
+              ),
               //table
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -128,7 +133,7 @@ class _MemberHomeState extends State<MemberHome> {
                             )),
                       ),
                     ]),
-                      //expiration_date
+                    //expiration_date
                     TableRow(children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -192,9 +197,6 @@ class _MemberHomeState extends State<MemberHome> {
                         ),
                       ),
                     ]),
-
-                   
-
                   ],
                 ),
               ),
