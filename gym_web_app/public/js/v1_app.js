@@ -14575,8 +14575,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! I:\WTN\islinton\gym_management_system\gym_web_app\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! I:\WTN\islinton\gym_management_system\gym_web_app\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! I:\WTN\islinton\gym_management_system\DEV\gym_web_app\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! I:\WTN\islinton\gym_management_system\DEV\gym_web_app\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -33,10 +33,26 @@ class SchedulesController extends Controller
         $trainer = Trainers::find($trainer_id);
         if ($trainer) {
 
-            $members = DB::table('members')
+            $members = array();
+            $raw_members = DB::table('members')
                 ->join('users', 'users.id', '=', 'members.user_id')
                 ->select('members.*', 'users.username')
                 ->get();
+
+
+            foreach ($raw_members as $member) {
+
+
+                //check if member is already assigned to any trainer
+                if (Trainerassignedmembers::where('member_id', $member->id)->count() == 0) {
+                    # not assigned to any trainer
+                    array_push($members, $member);
+                }
+            }
+
+
+
+
 
             //assigned members
             $assigned_members = array();

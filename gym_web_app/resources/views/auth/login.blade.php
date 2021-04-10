@@ -30,9 +30,9 @@
 
         .inner-container {
             width: 400px;
-            height: 400px;
+            height: 80vh;
             position: absolute;
-            top: calc(50vh - 200px);
+            top: 3%;
             left: calc(50vw - 200px);
             overflow: hidden;
         }
@@ -116,7 +116,7 @@
 <body>
 
 
-
+    @include('sweetalert::alert')
 
     <div class="vid-container" style="background: url({{ asset('images/bg_login.jpg') }})">
         <div class="inner-container">
@@ -127,26 +127,31 @@
                     </div>
                 </div>
 
-                      <form action="/login" method="post">
-                {{ csrf_field() }}
-                <input type="text" name="username" placeholder="Username" style="color: white" />
-                <input type="password" name="password" placeholder="Password" />
+                <div class="py-2">
 
-                  @if ($errors->any())
-                    <div class="alert alert-danger error-container mt-2" style="background-color: #ffcdd2;color: rgba(0,0,0,.87);padding:10px 20px;margin-bottom:20px;">
-                        <div class="alert alert-danger">
-                            <ul class="errors">
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                    @if ($errors->any())
+                        <div class="alert alert-danger error-container mt-2"
+                            style="background-color: #ffcdd2;color: rgba(0,0,0,.87);padding:1px 1px;">
+                            <div class="alert alert-danger">
+                                <ul class="errors">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     @endif
 
+                </div>
 
-                <button  type="submit"  style="width: 50%">Login</button>
-            </form>
+                <form action="/login" method="post">
+                    {{ csrf_field() }}
+                    <input type="text" name="username" required placeholder="Username" style="color: white" />
+                    <input type="password" name="password" required placeholder="Password" />
+
+                    <button type="submit" style="width: 50%">Login</button>
+
+                </form>
             </div>
         </div>
     </div>

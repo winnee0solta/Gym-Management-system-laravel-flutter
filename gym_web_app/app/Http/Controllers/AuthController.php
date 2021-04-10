@@ -24,11 +24,12 @@ class AuthController extends Controller
             'username' => $request['username'],
             'password' => $request['password'],
         ];
-        // return $credentials;    
+
         if (Auth::attempt($credentials)) {
             return redirect('/dashboard');
         } else {
-            return  back()->withErrors(['Invalid Credentials !']);
+            alert()->error('Invalid Credentials', 'Enter correct credentials.');
+            return  back();
         }
     }
     public function destroy()

@@ -49,7 +49,7 @@ class DashboardController extends Controller
                     $trainee_absent_count =  $trainee_absent_count + 1;
 
                     //add to absent array
-                    array_push($absent_trainers,$trainer);
+                    array_push($absent_trainers, $trainer);
                 }
             }
         }

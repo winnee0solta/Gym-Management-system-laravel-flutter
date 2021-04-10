@@ -19,12 +19,12 @@
 
 <body>
 
-
+    @include('sweetalert::alert')
     @yield('modal')
 
 
     {{-- main --}}
-    <header class="navbar navbar-dark navbar-full bg-info doc-navbar-default">
+    <header class="navbar navbar-fixed-top  navbar-dark navbar-full bg-info doc-navbar-default">
         <button id="drawer_switcher" aria-controls="navdrawerDefault" aria-expanded="false"
             aria-label="Toggle Navdrawer" class="navbar-toggler" data-target="#navdrawerDefault"
             data-toggle="navdrawer"><span class="navbar-toggler-icon"></span></button>
@@ -79,10 +79,10 @@
             <div class="navdrawer-divider"></div>
 
             <div class="bg-danger text-center text-white px-2  ">
-                <div  style="font-size: 28px;;font-weight: 600">
+                <div style="font-size: 28px;;font-weight: 600">
                     Today
                 </div>
-                <div  style="font-size: 18px;font-weight: 700">
+                <div style="font-size: 18px;font-weight: 700">
                     {{ Carbon\Carbon::now()->toDateString() }}
                 </div>
                 {{-- <div class="mt-1" style="font-size: 18px;">
