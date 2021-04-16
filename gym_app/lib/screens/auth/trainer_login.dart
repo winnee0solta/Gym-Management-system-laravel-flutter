@@ -8,8 +8,7 @@ class TrainerLogin extends StatefulWidget {
 }
 
 class _TrainerLoginState extends State<TrainerLogin> {
-
-    //variables
+  //variables
   bool logingin = false;
   final Color fieldColor = Color(0xffedeef3);
   final Color brandColor = Color(0xffb0a999);
@@ -17,7 +16,6 @@ class _TrainerLoginState extends State<TrainerLogin> {
   final passwordController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  
   @override
   void dispose() {
     usernameController.dispose();
@@ -25,10 +23,9 @@ class _TrainerLoginState extends State<TrainerLogin> {
     super.dispose();
   }
 
-  
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       key: _scaffoldKey,
       body: SingleChildScrollView(
         child: Container(
@@ -40,7 +37,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
             children: <Widget>[
               SizedBox(
                 height: 80.0,
-              ), 
+              ),
               SizedBox(
                 height: 100.0,
               ),
@@ -123,7 +120,6 @@ class _TrainerLoginState extends State<TrainerLogin> {
               SizedBox(
                 height: 40.0,
               ),
- 
             ],
           ),
         ),
@@ -131,7 +127,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
     );
   }
 
-   void _loginUser() {
+  void _loginUser() {
     var username = usernameController.text;
     var password = passwordController.text;
     if (username == '' || password == '') {
@@ -152,6 +148,4 @@ class _TrainerLoginState extends State<TrainerLogin> {
       }
     });
   }
-
-
 }

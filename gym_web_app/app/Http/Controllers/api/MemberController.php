@@ -107,12 +107,12 @@ class MemberController extends Controller
 
             //profile data
             $bodystatus = array(
-                'weight' => 0,
-                'height' => 0,
-                'chest' => 0,
-                'stomach' => 0,
-                'biceps' => 0,
-                'thighs' => 0,
+                'weight' => '0',
+                'height' => '0',
+                'chest' => '0',
+                'stomach' => '0',
+                'biceps' => '0',
+                'thighs' => '0',
             );
 
             $bs = Memberbodystatus::where('member_id', $member->id)->first();

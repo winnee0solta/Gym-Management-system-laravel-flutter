@@ -22,11 +22,12 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "bootstrap": "^4.5.3",
+        "bootstrap": "^4.6.0",
         "daemonite-material": "^4.1.1",
         "jquery": "^3.5.1",
         "jquery-lazy": "^1.7.11",
-        "popper.js": "^1.14.3",
+        "magnific-popup": "^1.1.0",
+        "popper.js": "^1.16.1",
         "slick-carousel": "^1.8.1"
     }
 }

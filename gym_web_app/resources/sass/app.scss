@@ -1,31 +1,27 @@
 @import "~daemonite-material/css/material.min.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-
-@import 'login';
-.bg-dark{
+@import "login";
+.bg-dark {
     background: black !important;
 }
 
-
-
-.navbar{
+.navbar {
     background: black !important;
 }
 
-.navdrawer-nav{
-    .nav-item{
-
-
+.navdrawer-nav {
+    .nav-item {
         color: white;
         // border-bottom: 1px solid white;
 
-        &:hover{
+        &:hover {
             background-color: black;
         }
     }
-    .dropdown-divider{
+    .dropdown-divider {
         margin: 0 auto;
         width: 85%;
-        background-color:white !important;
+        background-color: white !important;
     }
 }

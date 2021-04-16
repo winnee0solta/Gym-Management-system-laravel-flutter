@@ -1,5 +1,5 @@
 class ApiHelper {
-  static final String domain = "http://192.168.1.120:8000";
+  static final String domain = "http://192.168.1.91:8000";
   static final String baseurl = domain + "/api";
   static final String loginurl = baseurl + "/login";
   static final String registerurl = baseurl + "/register";

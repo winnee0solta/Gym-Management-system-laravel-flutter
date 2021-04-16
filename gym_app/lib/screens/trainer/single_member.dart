@@ -435,6 +435,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFSC,
               decoration: InputDecoration(
                 filled: true,
@@ -456,6 +458,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFMC,
               decoration: InputDecoration(
                 filled: true,
@@ -477,6 +481,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFTC,
               decoration: InputDecoration(
                 filled: true,
@@ -498,6 +504,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFWC,
               decoration: InputDecoration(
                 filled: true,
@@ -519,6 +527,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFThC,
               decoration: InputDecoration(
                 filled: true,
@@ -540,6 +550,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFFC,
               decoration: InputDecoration(
                 filled: true,
@@ -561,6 +573,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: npFSaC,
               decoration: InputDecoration(
                 filled: true,
@@ -621,6 +635,9 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              keyboardType: TextInputType.multiline,
+              minLines: 5,
+              maxLines: 5,
               controller: wpFSC,
               decoration: InputDecoration(
                 filled: true,
@@ -642,6 +659,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFMC,
               decoration: InputDecoration(
                 filled: true,
@@ -663,6 +682,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFTC,
               decoration: InputDecoration(
                 filled: true,
@@ -684,6 +705,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFWC,
               decoration: InputDecoration(
                 filled: true,
@@ -705,6 +728,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFThC,
               decoration: InputDecoration(
                 filled: true,
@@ -726,6 +751,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFFC,
               decoration: InputDecoration(
                 filled: true,
@@ -747,6 +774,8 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
         Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: TextField(
+              minLines: 5,
+              maxLines: 5,
               controller: wpFSaC,
               decoration: InputDecoration(
                 filled: true,
@@ -889,44 +918,47 @@ class _TrainerSingleMemberState extends State<TrainerSingleMember> {
 
           //bodystatus
           weightController.value =
-              TextEditingValue(text: data['bodystatus']['weight']);
+              TextEditingValue(text: data['bodystatus']['weight'].toString());
           heightController.value =
-              TextEditingValue(text: data['bodystatus']['height']);
+              TextEditingValue(text: data['bodystatus']['height'].toString());
           chestController.value =
-              TextEditingValue(text: data['bodystatus']['chest']);
+              TextEditingValue(text: data['bodystatus']['chest'].toString());
           stomachController.value =
-              TextEditingValue(text: data['bodystatus']['stomach']);
+              TextEditingValue(text: data['bodystatus']['stomach'].toString());
           bicepsController.value =
-              TextEditingValue(text: data['bodystatus']['biceps']);
+              TextEditingValue(text: data['bodystatus']['biceps'].toString());
           thighsController.value =
-              TextEditingValue(text: data['bodystatus']['thighs']);
+              TextEditingValue(text: data['bodystatus']['thighs'].toString());
           //Nutrition
-          npFSC.value =
-              TextEditingValue(text: data['nutrition_plans']['sunday']);
-          npFMC.value =
-              TextEditingValue(text: data['nutrition_plans']['monday']);
-          npFTC.value =
-              TextEditingValue(text: data['nutrition_plans']['tuesday']);
-          npFWC.value =
-              TextEditingValue(text: data['nutrition_plans']['wednesday']);
-          npFThC.value =
-              TextEditingValue(text: data['nutrition_plans']['thursday']);
-          npFFC.value =
-              TextEditingValue(text: data['nutrition_plans']['friday']);
-          npFSaC.value =
-              TextEditingValue(text: data['nutrition_plans']['saturday']);
+          npFSC.value = TextEditingValue(
+              text: data['nutrition_plans']['sunday'].toString());
+          npFMC.value = TextEditingValue(
+              text: data['nutrition_plans']['monday'].toString());
+          npFTC.value = TextEditingValue(
+              text: data['nutrition_plans']['tuesday'].toString());
+          npFWC.value = TextEditingValue(
+              text: data['nutrition_plans']['wednesday'].toString());
+          npFThC.value = TextEditingValue(
+              text: data['nutrition_plans']['thursday'].toString());
+          npFFC.value = TextEditingValue(
+              text: data['nutrition_plans']['friday'].toString());
+          npFSaC.value = TextEditingValue(
+              text: data['nutrition_plans']['saturday'].toString());
           //Workout
-          wpFSC.value = TextEditingValue(text: data['workout_plans']['sunday']);
-          wpFMC.value = TextEditingValue(text: data['workout_plans']['monday']);
-          wpFTC.value =
-              TextEditingValue(text: data['workout_plans']['tuesday']);
-          wpFWC.value =
-              TextEditingValue(text: data['workout_plans']['wednesday']);
-          wpFThC.value =
-              TextEditingValue(text: data['workout_plans']['thursday']);
-          wpFFC.value = TextEditingValue(text: data['workout_plans']['friday']);
-          wpFSaC.value =
-              TextEditingValue(text: data['workout_plans']['saturday']);
+          wpFSC.value = TextEditingValue(
+              text: data['workout_plans']['sunday'].toString());
+          wpFMC.value = TextEditingValue(
+              text: data['workout_plans']['monday'].toString());
+          wpFTC.value = TextEditingValue(
+              text: data['workout_plans']['tuesday'].toString());
+          wpFWC.value = TextEditingValue(
+              text: data['workout_plans']['wednesday'].toString());
+          wpFThC.value = TextEditingValue(
+              text: data['workout_plans']['thursday'].toString());
+          wpFFC.value = TextEditingValue(
+              text: data['workout_plans']['friday'].toString());
+          wpFSaC.value = TextEditingValue(
+              text: data['workout_plans']['saturday'].toString());
 
           //attendance
 

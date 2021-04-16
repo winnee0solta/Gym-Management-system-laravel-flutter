@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:gym_app/index.dart';
 
 //splash screen
@@ -45,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void checkIfAuthenticated() async {
     //pop screens untill splash screen is 1st screen
     Navigator.of(context).popUntil((route) => route.isFirst);
-
+    sleep(Duration(seconds: 4));
     //check if authenticated
     Authentication().check().then((logedin) {
       print(logedin);
